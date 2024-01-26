@@ -11,6 +11,10 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.get("/", (req, res) => {
+  res.send("welcome user");
+});
+
 app.use(UserRoute);
 app.listen(process.env.Port, async () => {
   try {
